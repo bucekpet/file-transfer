@@ -1,9 +1,7 @@
 <script setup>
-
+import UploadFile from '../components/UploadFile.vue';
 </script>
 
 <template>
-  <div>
-    Upload view
-  </div>
+  <UploadFile />
 </template>

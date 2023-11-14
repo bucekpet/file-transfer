@@ -16,14 +16,19 @@ import QrCode from '@/components/QrCode.vue';
       <QrCode />
     </div>
 
-    <div class="row my-5"></div>
-    <div class="d-sm-flex justify-content-evenly my-5">
-      <RouterLink class="btn btn-outline-success" to="/download">File download</RouterLink>
-      <RouterLink class="btn btn-outline-success" to="/upload">File upload</RouterLink>
+    <div class="row my-5">
+      <div class="d-flex justify-content-evenly my-5">
+        <RouterLink class="btn btn-outline-success" to="/download">File download</RouterLink>
+        <RouterLink class="btn btn-outline-success" to="/upload">File upload</RouterLink>
+      </div>
+
+      <div class="row my-5">
+        <div class="d-flex justify-content-center align-items-center">
+          <RouterView />
+        </div>
+      </div>
+
     </div>
-
-    <RouterView />
-
   </div>
 </template>
 
