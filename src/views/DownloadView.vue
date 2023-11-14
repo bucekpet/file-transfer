@@ -2,7 +2,6 @@
 </script>
 
 <template>
-  <main>
-    em funginks
-  </main>
+  <div>
+  </div>
 </template>

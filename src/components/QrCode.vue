@@ -1,6 +1,13 @@
 <template>
-    <div>
-        <img class="qr-code" v-if="qrCodeDataUrl" :src="qrCodeDataUrl" alt="QR Code">
+    <div class="row">
+        <div class="col">
+            <button @click="toggleShowQR" class="btn btn-outline-success">Show qrcode</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <img class="qr-code" v-if="showQR" :src="qrCodeDataUrl" alt="QR Code">
+        </div>
     </div>
 </template>
 
@@ -11,6 +18,7 @@ export default {
     data() {
         return {
             qrCodeDataUrl: null,
+            showQR: false
         };
     },
     mounted() {
@@ -27,6 +35,9 @@ export default {
 
             const dataUrl = qr.createDataURL(cell_size, 0)
             this.qrCodeDataUrl = dataUrl
+        },
+        toggleShowQR() {
+            this.showQR = !this.showQR
         }
     }
 }
