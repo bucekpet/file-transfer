@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   sodipodi:docname="file-transfer-logo.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.73139029"
+     inkscape:cx="398.55601"
+     inkscape:cy="536.64918"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <linearGradient
+       id="linearGradient2"
+       inkscape:collect="always">
+      <stop
+         style="stop-color:#8c1fa6;stop-opacity:1;"
+         offset="0"
+         id="stop2" />
+      <stop
+         style="stop-color:#4c2863;stop-opacity:1;"
+         offset="0.89589906"
+         id="stop3" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient2"
+       id="linearGradient3"
+       x1="67.467117"
+       y1="79.585876"
+       x2="141.62668"
+       y2="182.86664"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="path1"
+       style="fill:url(#linearGradient3);stroke-width:0.264583;fill-opacity:1;fill-rule:nonzero"
+       inkscape:label="background"
+       d="M 104.90884 66.201127 A 64.030449 64.030449 0 0 0 40.878125 130.23133 A 64.030449 64.030449 0 0 0 104.90884 194.26204 A 64.030449 64.030449 0 0 0 168.93904 130.23133 A 64.030449 64.030449 0 0 0 104.90884 66.201127 z M 101.12509 79.63855 A 3.5650001 3.5650001 0 0 1 103.64639 80.683447 A 3.5650001 3.5650001 0 0 1 103.64639 85.724483 L 88.341378 101.02949 L 136.68726 101.02949 A 3.5650001 3.5650001 0 0 1 140.2519 104.59362 A 3.5650001 3.5650001 0 0 1 136.68726 108.15826 L 88.341895 108.15826 L 103.64639 123.46275 A 3.5650001 3.5650001 0 0 1 103.64639 128.50378 A 3.5650001 3.5650001 0 0 1 98.603284 128.50378 L 74.693115 104.59362 L 98.603284 80.683447 A 3.5650001 3.5650001 0 0 1 101.12509 79.63855 z M 108.59751 128.5627 A 3.5650001 3.5650001 0 0 1 111.11725 129.60759 L 135.02948 153.51776 L 111.11725 177.42793 A 3.5650001 3.5650001 0 0 1 106.07621 177.42793 A 3.5650001 3.5650001 0 0 1 106.07621 172.38689 L 121.38122 157.08188 L 73.035335 157.08188 A 3.5650001 3.5650001 0 0 1 69.468628 153.51776 A 3.5650001 3.5650001 0 0 1 73.035335 149.95312 L 121.3807 149.95312 L 106.07621 134.64863 A 3.5650001 3.5650001 0 0 1 106.07621 129.60759 A 3.5650001 3.5650001 0 0 1 108.59751 128.5627 z " />
+  </g>
+</svg>
