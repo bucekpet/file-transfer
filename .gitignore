@@ -8,6 +8,8 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
+input_files
+output_files
 .DS_Store
 dist
 dist-ssr
