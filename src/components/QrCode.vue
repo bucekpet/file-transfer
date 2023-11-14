@@ -31,10 +31,3 @@ export default {
     }
 }
 </script>
-
-<style scoped>
-.qr-code {
-    filter: invert(100%);
-    /* Invert the colors to make black green */
-}
-</style>
