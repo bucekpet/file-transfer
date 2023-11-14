@@ -4,5 +4,6 @@
 
 <template>
   <div>
+    Upload view
   </div>
 </template>

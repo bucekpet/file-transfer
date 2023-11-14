@@ -3,5 +3,6 @@
 
 <template>
   <div>
+    Download view
   </div>
 </template>

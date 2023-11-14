@@ -1,13 +1,7 @@
 <template>
-    <div class="row">
-        <div class="col">
-            <button @click="toggleShowQR" class="btn btn-outline-success">Show qrcode</button>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <img class="qr-code" v-if="showQR" :src="qrCodeDataUrl" alt="QR Code">
-        </div>
+    <div class="d-flex justify-content-center align-items-start">
+        <button @click="toggleShowQR" class="btn btn-outline-success">Show qrcode</button>
+        <img class="qr-code" v-if="showQR" :src="qrCodeDataUrl" alt="QR Code">
     </div>
 </template>
 
