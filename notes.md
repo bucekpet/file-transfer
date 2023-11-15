@@ -6,3 +6,4 @@
 [ ] logging
 [ ] make script that runs server and client and only show qrcode, only
 device should see the page, server doesnt
+[ ] make it so user can choose which files to download/upload in bundle in zip
