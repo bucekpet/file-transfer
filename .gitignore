@@ -8,13 +8,14 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
-input_files
-output_files
 .DS_Store
 dist
 dist-ssr
 coverage
 *.local
+
+/input_files/*
+/output_files/*
 
 /cypress/videos/
 /cypress/screenshots/
