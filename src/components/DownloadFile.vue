@@ -19,7 +19,7 @@ export default {
   },
   methods: {
     fetchFiles() {
-      fetch('http://192.168.0.20:3000/api/files')
+      fetch('http://'+ LOCAL_IP_ADDRESS +':3000/api/files')
         .then(response => {
           if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`)

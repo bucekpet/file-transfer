@@ -12,7 +12,7 @@ export default {
     data() {
         return {
             qrCodeDataUrl: null,
-            showQR: false
+            showQR: false,
         }
     },
     mounted() {
@@ -20,11 +20,11 @@ export default {
     },
     methods: {
         generateQRcode() {
-            const text = "http://192.168.0.20:8888"
+            const data = "http://" + LOCAL_IP_ADDRESS + ":8888"
             const cell_size = 5
 
             const qr = QRCode(0, 'M')
-            qr.addData(text)
+            qr.addData(data)
             qr.make()
 
             const dataUrl = qr.createDataURL(cell_size, 0)

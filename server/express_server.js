@@ -1,6 +1,6 @@
 const express = require('express')
-const fs = require('fs')
 const cors = require('cors')
+const fs = require('fs')
 const ip = require('ip');
 
 const app = express()
@@ -21,11 +21,6 @@ app.get('/api/files', (req, res) => {
   })
 })
 
-app.get('/api/ip', (req, res) => {
-  const serverIP = ip.address();
-  res.json({ ip: serverIP });
-})
-
-app.listen(port, () => {
+app.listen(port, '0.0.0.0' , () => {
   console.log(`Server is running on http://localhost:${port}`)
 })
