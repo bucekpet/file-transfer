@@ -13,8 +13,8 @@ import QrCode from '@/components/QrCode.vue'
     </div>
 
     <!-- <div class="row my-5">
-        <QrCode />
-      </div> -->
+            <QrCode />
+          </div> -->
 
     <div class="row my-5">
       <div class="d-flex justify-content-evenly my-5">
