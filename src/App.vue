@@ -1,6 +1,6 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import QrCode from '@/components/QrCode.vue';
+import QrCode from '@/components/QrCode.vue'
 </script>
 
 <template>

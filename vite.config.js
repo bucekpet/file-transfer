@@ -13,8 +13,12 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   },
+  // server: {
+  //   host: 'localhost',
+  //   port: 8888,
+  // },
   server: {
-    host: 'localhost',
+    host: '192.168.0.20',
     port: 8888,
   },
   // server: {

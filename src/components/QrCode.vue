@@ -6,21 +6,21 @@
 </template>
 
 <script>
-import QRCode from 'qrcode-generator';
+import QRCode from 'qrcode-generator'
 
 export default {
     data() {
         return {
             qrCodeDataUrl: null,
             showQR: false
-        };
+        }
     },
     mounted() {
         this.generateQRcode()
     },
     methods: {
         generateQRcode() {
-            const text = "http://192.168.0.161:8888"
+            const text = "http://192.168.0.20:8888"
             const cell_size = 5
 
             const qr = QRCode(0, 'M')

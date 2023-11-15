@@ -1,5 +1,5 @@
 <script setup>
-import UploadFile from '../components/UploadFile.vue';
+import UploadFile from '../components/UploadFile.vue'
 </script>
 
 <template>
