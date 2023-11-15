@@ -35,5 +35,5 @@ app.get('/api/download/:filename', (req, res) => {
 })
 
 app.listen(port, '0.0.0.0' , () => {
-  console.log(`Server is running on http://localhost:${port}`)
+  console.log(`Server is running\nhttp://localhost:${port}\nhttp://${ip.address()}:${port}`)
 })
