@@ -4,3 +4,5 @@
 [x] for download list all files from input folder
 [ ] make user on phone enter code/numbers from desktop app to authorize
 [ ] logging
+[ ] make script that runs server and client and only show qrcode, only
+device should see the page, server doesnt
