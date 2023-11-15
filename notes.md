@@ -7,3 +7,4 @@
 [ ] logging .log
 [ ] show qrcode in terminal with python
 [ ] make it so user can choose which files to download in bundle in zip
+[ ] nginx
