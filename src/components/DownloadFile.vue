@@ -5,6 +5,9 @@
       <li v-for="file in files" :key="file">
         <a :href="getFileDownloadLink(file)" download>{{ file }}</a>
       </li>
+      <li>
+        TODO: Create zip
+      </li>
     </ul>
   </div>
 </template>

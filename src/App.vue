@@ -8,13 +8,13 @@ import QrCode from '@/components/QrCode.vue'
     <div class="row my-5">
       <div class="d-flex justify-content-center align-items-center">
         <img alt="File-transfer logo" class="logo mx-3" src="@/assets/logo.png" width="125" height="125" />
-        <h1 class="display-1">File transfer</h1>
-      </div>
+      <h1 class="display-1">File transfer</h1>
+    </div>
     </div>
 
-    <div class="row my-5">
-      <QrCode />
-    </div>
+    <!-- <div class="row my-5">
+        <QrCode />
+      </div> -->
 
     <div class="row my-5">
       <div class="d-flex justify-content-evenly my-5">
