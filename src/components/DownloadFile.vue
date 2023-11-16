@@ -1,25 +1,18 @@
 <template>
-  <div>
+  <h2>List of Files:</h2>
+  <ul>
+    <li class="mb-2" v-for="file in files" :key="file">
+      <a class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
+        :href="getFileDownloadLink(file)" download>{{ file }}</a>
+    </li>
+  </ul>
 
 
-    <h2>List of Files:</h2>
-    <ul>
-      <li v-for="file in files" :key="file">
-        <a class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
-          :href="getFileDownloadLink(file)" download>{{ file }}</a>
-      </li>
-    </ul>
-
-
-    <a href="http://localhost:3000/api/download/zip" download="files.zip">
-      <button class="btn btn-outline-success">Download Zip</button>
-    </a>
-  </div>
+  <a href="http://localhost:3000/api/download/zip" download="files.zip">
+    <button class="btn btn-outline-success">Download Zip</button>
+  </a>
 </template>
 
-<style scoped>
-a {}
-</style>
 
 <script>
 
