@@ -3,7 +3,7 @@ import DownloadFileVue from '../components/DownloadFile.vue'
 </script>
 
 <template>
-  <div class="">
+  <div>
     <DownloadFileVue />
   </div>
 </template>

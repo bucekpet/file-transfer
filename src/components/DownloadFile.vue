@@ -13,6 +13,11 @@
   </a>
 </template>
 
+<style scoped>
+ul {
+  list-style-type: circle;
+}
+</style>
 
 <script>
 
