@@ -1,6 +1,5 @@
 <template>
   <h2>List of Files:</h2>
-  <a :href="fetchFiles()"></a>
   <ul>
     <li class="mb-2" v-for="file in files" :key="file">
       <a class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
