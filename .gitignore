@@ -13,6 +13,7 @@ dist
 dist-ssr
 coverage
 *.local
+*.exe
 
 /input_files/*
 /output_files/*

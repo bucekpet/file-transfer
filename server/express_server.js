@@ -7,16 +7,8 @@ const ip = require('ip')
 const app = express()
 const port = 3000
 
-const downloadFolderPath = './Download_folder'
-const uploadFolderPath = './Upload_folder'
-
-// Check if down/upload folders exists or create them
-if(!fs.existsSync(downloadFolderPath)){
-    fs.mkdirSync(downloadFolderPath);
-}
-if(!fs.existsSync(uploadFolderPath)){
-    fs.mkdirSync(uploadFolderPath);
-}
+const downloadFolderPath = './input_files'
+const uploadFolderPath = './output_files'
 
 app.use(cors())
 app.use(express.json())

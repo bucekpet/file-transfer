@@ -1,11 +1,15 @@
-const express = require('express')
+const express = require('express');
+const path = require('path');
+const os = require('os');
+const dns = require('dns');
+const QRCode = require('qrcode-terminal');
 const cors = require('cors')
 const multer = require('multer')
 const fs = require('fs')
-const ip = require('ip')
 
-const app = express()
-const port = 3000
+const app = express();
+const port = process.env.PORT || 3000; // You can change the port if needed
+
 
 const downloadFolderPath = './Download_folder'
 const uploadFolderPath = './Upload_folder'
@@ -65,6 +69,29 @@ app.get('/api/download/:filename', (req, res) => {
   fileStream.pipe(res)
 })
 
+// Serve the built Vue.js app
+app.use(express.static(path.join(__dirname, 'dist')));
+
+// Handle all other routes by serving the index.html file
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+});
+
 app.listen(port, '0.0.0.0', () => {
-  console.log(`Server is running\nhttp://localhost:${port}\nhttp://${ip.address()}:${port}`)
-})
+    console.log(`Server is running. Scan the qr code.\nTo exit close this window.`);
+});
+
+dns.lookup(os.hostname(), { family: 4 }, function (err, add, fam) {
+    if (err) {
+      console.error('Error getting local IP address:', err);
+      return;
+    }
+  
+    const ip = String(add);
+    const qrData = `http://${ip}:${port}`;
+  
+  
+    QRCode.generate(qrData, { small: true }, function (qrcode) {
+      console.log(qrcode);
+    });
+  });
