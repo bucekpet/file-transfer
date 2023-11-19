@@ -3,13 +3,14 @@
   <ul>
     <li class="mb-2" v-for="file in files" :key="file">
       <a class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
-        :href="getFileDownloadLink(file)" download>{{ file }}</a>
+        :href="downloadFile(file)" download>{{ file }}</a>
     </li>
   </ul>
 
+  <p v-if="files.length == 0">Download folder is empty</p>
 
-  <a href="http://localhost:3000/api/download/zip" download="files.zip">
-    <button class="btn btn-outline-success">Download Zip</button>
+  <a :href="downloadZip()" download="files.zip">
+    <button v-if="files.length > 0" class="btn btn-outline-success">Download Zip</button>
   </a>
 </template>
 
@@ -46,10 +47,13 @@ export default {
           console.error('Error fetching files:', error)
         })
     },
-    getFileDownloadLink(file) {
+    downloadFile(file) {
       // Construct the download link for each file
       return `http://${LOCAL_IP_ADDRESS}:3000/api/download/${file}`;
     },
+    downloadZip() {
+      return `http://${LOCAL_IP_ADDRESS}:3000/api/download/zip`;
+    }
   },
 }
 </script>
