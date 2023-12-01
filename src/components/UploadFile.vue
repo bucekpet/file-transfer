@@ -1,6 +1,6 @@
 <template>
     <input class="form-control" data-bs-theme="dark" type="file" ref="fileInput" multiple @change="handleFileChange">
-    <button class="btn btn-outline-success" @click="uploadFile">Send</button>
+    <button class="btn btn-outline-success" @click="uploadFile">Upload</button>
 
 
     <!-- Success Toast -->
