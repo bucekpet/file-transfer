@@ -1,17 +1,42 @@
 <template>
-    <div class="d-grid gap-2">
-        <input class="form-control" data-bs-theme="dark" type="file" ref="fileInput" multiple @change="handleFileChange">
-        <button class="btn btn-outline-success" @click="uploadFile">Submit</button>
+    <input class="form-control" data-bs-theme="dark" type="file" ref="fileInput" multiple @change="handleFileChange">
+    <button class="btn btn-outline-success" @click="uploadFile">Upload</button>
+
+
+    <!-- Success Toast -->
+    <div id="successToast" class="toast bg-success">
+        <div class="toast-header bg-success">
+            <strong class="me-auto">Success</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+            Files uploaded!
+        </div>
+    </div>
+
+
+
+    <!-- Error Toast -->
+    <div id="errorToast" class="toast bg-danger">
+        <div class="toast-header bg-danger">
+            <strong class="me-auto">Error</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+            An error occurred!
+        </div>
     </div>
 </template>
 
-<script>
-export default {
-    data() {
-        return {
+<style scoped>
+.toast {
+    color: black;
+}
+</style>
 
-        }
-    },
+<script>
+import bootstrap from 'bootstrap/dist/js/bootstrap.bundle.min.js';
+export default {
     methods: {
         handleFileChange() {
             // Handel file change if needed
@@ -39,16 +64,24 @@ export default {
                     })
                     .then(data => {
                         console.log('Files uploaded successfully:', data);
+                        this.showToast('successToast')
                     })
                     .catch(error => {
                         console.error('Error uploading files:', error);
+                        this.showToast('errorToast')
                     });
             } else {
                 console.error('No files selected');
+                this.showToast('errorToast')
             }
-        }
+        },
+        showToast(toastId) {
+            const toast = new bootstrap.Toast(document.getElementById(toastId));
+            toast.show();
+            setTimeout(() => {
+                toast.hide();
+            }, 2000);
+        },
     }
 }
 </script>
-
-<style scoped></style>

@@ -2,18 +2,23 @@
   "name": "file-transfer",
   "version": "0.0.0",
   "private": true,
+  "bin": "./server.js",
+  "main": "./server.js",
   "scripts": {
+    "start": "./server.js",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
+    "archiver": "^6.0.1",
     "bootstrap": "^5.3.2",
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "ip": "^1.1.8",
     "multer": "^1.4.5-lts.1",
     "qrcode-generator": "^1.4.4",
+    "qrcode-terminal": "^0.12.0",
     "safe-buffer": "^5.2.1",
     "vue": "^3.3.4",
     "vue-router": "^4.2.5"
@@ -21,5 +26,15 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.4.0",
     "vite": "^4.4.11"
+  },
+  "pkg": {
+    "assets": [
+      "dist/index.html",
+      "dist/assets/*"
+    ],
+    "scripts": "server.js",
+    "targets": [
+      "node16-win-x64"
+    ]
   }
 }

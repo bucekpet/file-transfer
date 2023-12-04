@@ -13,9 +13,11 @@ dist
 dist-ssr
 coverage
 *.local
+*.exe
+file-transfer
 
-/input_files/*
-/output_files/*
+/Download_folder
+/Upload_folder
 
 /cypress/videos/
 /cypress/screenshots/

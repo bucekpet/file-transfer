@@ -4,6 +4,6 @@ import DownloadFileVue from '../components/DownloadFile.vue'
 
 <template>
   <div>
-    <DownloadFileVue/>
+    <DownloadFileVue />
   </div>
 </template>

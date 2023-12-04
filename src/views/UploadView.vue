@@ -3,5 +3,7 @@ import UploadFile from '../components/UploadFile.vue'
 </script>
 
 <template>
-  <UploadFile />
+  <div class="d-flex flex-column">
+    <UploadFile />
+  </div>
 </template>
