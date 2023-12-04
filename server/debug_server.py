@@ -12,8 +12,8 @@ CORS(app)
 
 port = 3000
 
-download_folder_path = '../input_files'
-upload_folder_path = '../output_files'
+download_folder_path = './Download_folder'
+upload_folder_path = './Upload_folder'
 
 app.config['UPLOAD_FOLDER'] = upload_folder_path
 app.config['DOWNLOAD_FOLDER'] = download_folder_path

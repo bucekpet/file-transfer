@@ -4,14 +4,14 @@ from werkzeug.utils import secure_filename
 import os
 import ipaddress
 
-app = Flask(__name__, static_folder='../dist',
-            template_folder='../dist', static_url_path='/')
+app = Flask(__name__, static_folder='./dist',
+            template_folder='./dist', static_url_path='/')
 CORS(app)
 
 port = 3000
 
-download_folder_path = '../input_files'
-upload_folder_path = '../output_files'
+download_folder_path = './Download_folder'
+upload_folder_path = './Upload_folder'
 
 app.config['UPLOAD_FOLDER'] = upload_folder_path
 app.config['DOWNLOAD_FOLDER'] = download_folder_path
