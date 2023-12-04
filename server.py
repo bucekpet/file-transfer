@@ -2,7 +2,8 @@ from flask import Flask, jsonify, send_from_directory, request, render_template
 from flask_cors import CORS
 from werkzeug.utils import secure_filename
 import os
-import ipaddress
+import logging
+import socket
 
 app = Flask(__name__, static_folder='./dist',
             template_folder='./dist', static_url_path='/')
@@ -15,6 +16,10 @@ upload_folder_path = './Upload_folder'
 
 app.config['UPLOAD_FOLDER'] = upload_folder_path
 app.config['DOWNLOAD_FOLDER'] = download_folder_path
+
+# Set logging to errors only
+log = logging.getLogger('werkzeug')
+log.setLevel(logging.ERROR)
 
 # Ensure upload and download folders exist
 os.makedirs(upload_folder_path, exist_ok=True)
@@ -67,8 +72,22 @@ def download_file(filename):
     return send_from_directory(app.config['DOWNLOAD_FOLDER'], filename, as_attachment=True)
 
 
+def get_local_ip():
+    try:
+        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        s.connect(("8.8.8.8", 80))
+
+        # Get the local IP address
+        local_ip = s.getsockname()[0]
+
+        return local_ip
+
+    except OSError as e:
+        print(f"Error: {e}")
+        return None
+
+
 if __name__ == '__main__':
     host = '0.0.0.0'
-    print(
-        f"Server is running\nhttp://localhost:{port}\nhttp://{ipaddress.IPv4Address(host)}:{port}")
-    app.run(host=host, port=port)
+    print('http://' + get_local_ip() + ':' + str(port))
+    app.run(host=host, port=port, use_reloader=False, use_debugger=False)
