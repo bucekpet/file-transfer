@@ -15,6 +15,7 @@ coverage
 *.local
 *.exe
 file-transfer
+.venv
 
 /Download_folder
 /Upload_folder
