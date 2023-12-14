@@ -30,7 +30,7 @@ os.makedirs(download_folder_path, exist_ok=True)
 
 
 def allowed_files(filename):
-    return '.' in filename and filename.rsplit('.', 1)[1].lower() in {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
+    return '.' in filename and filename.rsplit('.', 1)[1].lower() in {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif', 'svg', 'mp4', 'mov', 'webm'}
 
 
 @app.route('/')

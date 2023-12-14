@@ -2,10 +2,10 @@ from flask import Flask, jsonify, send_from_directory, request, make_response
 from flask_cors import CORS
 from werkzeug.utils import secure_filename
 import os
-import ipaddress
-import shutil
 from io import BytesIO
 import zipfile
+import qrcode
+import socket
 
 app = Flask(__name__)
 CORS(app)
@@ -26,7 +26,7 @@ os.makedirs(download_folder_path, exist_ok=True)
 
 
 def allowed_files(filename):
-    return '.' in filename and filename.rsplit('.', 1)[1].lower() in {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
+    return '.' in filename and filename.rsplit('.', 1)[1].lower() in {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif', 'svg', 'mp4', 'mov', 'webm'}
 
 
 @app.route('/api/upload', methods=['POST'])
@@ -86,8 +86,30 @@ def download_zip():
     return response
 
 
+def get_local_ip():
+    try:
+        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        s.connect(("8.8.8.8", 80))
+
+        # Get the local IP address
+        local_ip = s.getsockname()[0]
+
+        return local_ip
+
+    except OSError as e:
+        print(f"Error: {e}")
+        return None
+
+
+def create_qr():
+    data = 'http://' + get_local_ip() + ':' + str(port)
+    qr = qrcode.QRCode()
+    qr.add_data(data)
+    qr.print_ascii()
+
+
 if __name__ == '__main__':
     host = '0.0.0.0'
-    print(
-        f"Server is running\nhttp://localhost:{port}\nhttp://{ipaddress.IPv4Address(host)}:{port}")
-    app.run(host=host, port=port)
+    print('http://' + get_local_ip() + ':' + str(port))
+    create_qr()
+    app.run(host=host, port=port, use_reloader=False, use_debugger=False)
