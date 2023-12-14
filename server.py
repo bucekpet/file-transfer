@@ -5,7 +5,6 @@ import os
 import logging
 import socket
 import qrcode
-import io
 
 app = Flask(__name__, static_folder='./dist',
             template_folder='./dist', static_url_path='/')
