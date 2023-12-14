@@ -8,7 +8,7 @@ import { RouterLink, RouterView } from 'vue-router'
     <!-- LOGO -->
     <div class="d-flex justify-content-around align-items-center">
       <h1 class="display-1">File transfer</h1>
-      <img alt="File transfer logo" class="logo mx-3" src="@/../public/logo.png" width="125" height="125" />
+      <img alt="File transfer logo" class="logo mx-3" src="@/logo.png" width="125" height="125" />
     </div>
 
     <!-- DOWONLOAD/UPLOAD -->
