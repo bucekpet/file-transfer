@@ -7,13 +7,13 @@ npm install
 pip install -r requuirements.txt
 ```
 
-### How to run with server
+### Build and run
 ```sh
 npm run build
 python server.py
 ```
 
-### How to run with debug server
+### Run in dev
 ```sh
 npm run dev
 python server/debug_server.py
