@@ -25,7 +25,7 @@ python server/debug_server.py
 
 ### Scan the qrcode with your device 📲
 
-> Upon running the server will create Download and Upload folders.<br>
+> Upon running the server will create Download and Upload folders in the project folder.<br>
 > - Copy the files you want to transfer to device to download folder.
 > - Files uploaded from device are stored in upload folder.
 
