@@ -1,10 +1,12 @@
-from flask import Flask, jsonify, send_from_directory, request, render_template
+from flask import Flask, jsonify, send_from_directory, request, render_template, make_response
 from flask_cors import CORS
 from werkzeug.utils import secure_filename
+from io import BytesIO
 import os
 import logging
 import socket
 import qrcode
+import zipfile
 
 app = Flask(__name__, static_folder='./dist',
             template_folder='./dist', static_url_path='/')
@@ -71,6 +73,26 @@ def list_files():
 @app.route('/api/download/<filename>')
 def download_file(filename):
     return send_from_directory(app.config['DOWNLOAD_FOLDER'], filename, as_attachment=True)
+
+
+@app.route('/api/download/zip')
+def download_zip():
+    # Create an in-memory zip file
+    zip_buffer = BytesIO()
+    with zipfile.ZipFile(zip_buffer, 'a', zipfile.ZIP_DEFLATED, False) as zip_file:
+        for root, _, files in os.walk(app.config['DOWNLOAD_FOLDER']):
+            for file in files:
+                file_path = os.path.join(root, file)
+                arcname = os.path.relpath(
+                    file_path, app.config['DOWNLOAD_FOLDER'])
+                zip_file.write(file_path, arcname)
+
+    # Set up the response
+    response = make_response(zip_buffer.getvalue())
+    response.headers['Content-Disposition'] = 'attachment; filename=files.zip'
+    response.headers['Content-Type'] = 'application/zip'
+
+    return response
 
 
 def get_local_ip():
