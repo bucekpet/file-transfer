@@ -4,6 +4,8 @@ from werkzeug.utils import secure_filename
 import os
 import logging
 import socket
+import qrcode
+import io
 
 app = Flask(__name__, static_folder='./dist',
             template_folder='./dist', static_url_path='/')
@@ -87,7 +89,15 @@ def get_local_ip():
         return None
 
 
+def create_qr():
+    data = 'http://' + get_local_ip() + ':' + str(port)
+    qr = qrcode.QRCode()
+    qr.add_data(data)
+    qr.print_ascii()
+
+
 if __name__ == '__main__':
     host = '0.0.0.0'
     print('http://' + get_local_ip() + ':' + str(port))
+    create_qr()
     app.run(host=host, port=port, use_reloader=False, use_debugger=False)
