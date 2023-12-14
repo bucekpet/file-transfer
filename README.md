@@ -1,7 +1,7 @@
 # File transfer ![Alt text](public/favicon.ico)
 Transfer files with your phone
 
-### Installing dependencies 📦
+### Install dependencies 📦
 ```sh
 npm install
 pip install -r requirements.txt
