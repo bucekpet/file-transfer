@@ -30,6 +30,6 @@ python server/debug_server.py
 
 > [!NOTE]
 > Upon running the server will create Download and Upload folders in the project folder.<br>
-> - Copy the files you want to transfer to device to download folder.
-> - Files uploaded from device are stored in upload folder.
+> - Copy the files you want to transfer to device to the download folder.
+> - Files uploaded from device are stored in the upload folder.
 
